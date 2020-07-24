@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode.js');
 const weather = require('./utils/weather.js');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //setup handlebars engine and views location
 app.set('view engine', 'hbs');
@@ -85,6 +86,8 @@ app.get('/weather', (req, res) => {
   });
 })
 
+
+
 app.get('/help/*', (req, res) => {
   res.render('404',{
     code: 404,
@@ -101,6 +104,6 @@ app.get('*', (req, res) => {
   });
 })
 
-app.listen(3000, ()=>{
-  console.log('Server is up on port 3000.');
+app.listen(port, ()=>{
+  console.log('Server is up on port' + port);
 })

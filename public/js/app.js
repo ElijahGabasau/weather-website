@@ -2,8 +2,7 @@ const fetchData = async (location) =>{
   document.querySelector('#one').innerHTML = 'Loading';
   document.querySelector('#two').innerHTML = '';
 
-
-  const response = await fetch('http://localhost:3000/weather?address=' + location);
+  const response = await fetch('/weather?address=' + location);
   const responseJSON = await response.json();
 
   if(responseJSON.error){
