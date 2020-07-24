@@ -19,7 +19,7 @@ const weather = (location, callback) => {
     }
 
     const current = response.body.current;
-    const result = `It is ${current.temperature} degrees and ${current.wind_speed} wind speed at ${current.observation_time} in current location, which feels like ${current.feelslike} degrees outside`
+    const result = `It is ${current.temperature} degrees, ${current.humidity}% humidity and ${current.wind_speed} wind speed at ${current.observation_time} in current location, which feels like ${current.feelslike} degrees outside`
 
     callback(undefined, result)
   });
